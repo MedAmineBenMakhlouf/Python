@@ -6,26 +6,23 @@ could take arguments
 Must return sth even None
 """
 
-# function sayHi() {
-#     console.log("Hi")
-# }
 
-# def say_hi():
-#     print("Hi")
-#     return None
+def say_hi():
+    print("Hi")
+    return None
 
 # Invoke // Call THE FUNCTION
 
-# say_hi()
+say_hi()
 
-# def say_hi(name):
-#     print(f"Hi {name}")
-#     return None
-# say_hi("Alex")
+def say_hi(name):
+    print(f"Hi {name}")
+    return None
+say_hi("Alex")
 
-# def multiply(a,b):
-#     return a*b
-# print(multiply(2,3))
+def multiply(a,b):
+    return a*b
+print(multiply(2,3))
 
 # multiply(1,2,35,3,8,3,)
 
@@ -35,7 +32,7 @@ def multiply(*args):
     for number in args :
         result *=number
     return result
-# print(multiply(1,2,35,3,8,3,2,35,3,8,3,2,35,3,8,3,2,35,3,8,3,2,35,3,8,3,2,35,3,8,3))
+print(multiply(1,2,35,3,8,3,2,35,3,8,3,2,35,3,8,3,2,35,3,8,3,2,35,3,8,3,2,35,3,8,3))
 
 
 def say_fullname(**kwargs):
