@@ -8,12 +8,13 @@ for i in range(5,1001):
 
 print("---------------------------")
 
-for i in range(1,101):
-    if i%5==0:
-        print(i,"coding")
-    if i%10==0:
-        print(i,"coding dojo")
-    else: print(i)
+for i in range (1,101):
+    if i % 10 == 0  :
+        print("Coding Dojo")
+    elif i % 5 == 0 :
+        print("Coding")
+    else:
+        print(i)
 
 print("---------------------------")
 sum=0
