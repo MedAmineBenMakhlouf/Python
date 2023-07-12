@@ -1,7 +1,8 @@
 class BankAccount:
-    def __init__(self, int_rate, balance):
+    def __init__(self, int_rate, balance, account_id):
         self.int_rate = int_rate
         self.balance = balance
+        self.account_id = account_id
 
     def deposit(self, amount):
         self.balance+=amount
@@ -21,15 +22,17 @@ class BankAccount:
         return self
         # your code here
 class User:
+    all_accounts=[]
     def __init__(self, name, email):
         self.name = name
         self.email = email
         self.account = BankAccount(int_rate=0.02, balance=0)
-        self.add_accounts = []
+        User.all_accounts.append()
     
     # other methods
-    def make_deposit(self, amount):
+    def make_deposit(self, amount, account_id):
     	# your code here
+
         self.account.deposit(amount)
         return self
     
@@ -40,8 +43,7 @@ class User:
     def display_user_balance(self):
         self.account.display_account_info()
 
-    def add_account(self):
-        account = BankAccount(self.account.int_rate, self.account.balance)
+    def add_account(self,account):
         self.add_accounts.append(account)
 
 
