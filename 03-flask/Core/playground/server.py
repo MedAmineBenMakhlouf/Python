@@ -3,8 +3,8 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 @app.route('/play')
-def index():
-    return render_template("index3cercles.html")
+def index(number=3):
+    return render_template("index.html", number=number)
 
 @app.route('/play/<int:number>')
 def with_number(number):
