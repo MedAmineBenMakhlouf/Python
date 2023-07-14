@@ -1,0 +1,17 @@
+*
+{
+    padding: 0;
+    margin: 0;
+}
+h1
+{
+    text-align: center;
+}
+
+.circle
+{
+    width:200px;
+    height: 200px;
+    border: 1px solid black;
+    background-color:rgb(159,197,248);
+}
