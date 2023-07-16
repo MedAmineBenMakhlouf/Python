@@ -24,8 +24,10 @@ class Ninja:
         self.pet.noise()
         return self
     
+treatpet = ["treat1", "treat2"]
+foodpet = ["pizza", "burger"]
 
-gogo = Ninja("gogo","flidg","treatf","pizza")
+gogo = Ninja("gogo","flidg",treatpet,foodpet)
 
 gogo.pet.type = "elf"
 
