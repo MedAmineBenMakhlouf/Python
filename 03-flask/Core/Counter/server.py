@@ -17,7 +17,7 @@ def destroy_session():
 
 @app.route('/count', methods=['POST'])
 def count():
-    session['visit_count'] = session['visit_count']+1
+    session['visit_count'] = session['visit_count']+2
     return render_template('index.html')
 
 
