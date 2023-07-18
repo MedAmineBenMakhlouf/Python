@@ -11,13 +11,31 @@
 
 <body>
     <div class="container">
-        <div class="row m-0 m-auto ">
-            <div class="col-lg-6 border border-1 ">
+        <div class="row m-0 m-auto mt-5 d-flex justify-content-center align-items-center">
+            <div class="col-lg-6 border border-1 border-dark">
                 <h1 class="text-decoration-underline">Submitted Info:</h1>
-                {{session['username']}}
-                {{session['location']}}
-                {{session['language']}}
-                {{session['comments']}}
+                <div class="d-flex justify-content-around">
+                    <div class="card border-0">
+                        <p>Name:</p>
+                        <p>Dojo Location:</p>
+                        <p>Favorite Language:</p>
+                        <p>Comment:</p>
+                        <p>Sex:</p>
+                        <p>Your updates</p>
+                    </div>
+                    <div class="card border-0">
+                        <p>{{session['username']}}</p>
+                        <p>{{session['location']}}</p>
+                        <p>{{session['language']}}</p>
+                        <p>{{session['comments']}}</p>
+                        <p>{{session['sex']}}</p>
+                        <p> {{session['emailupdate']}}</p>
+                    </div>
+
+                </div>
+                <div class=" d-flex justify-content-end">
+                    <a href="/" class="btn p-1 text-light bg-info mb-2 mt-2">Go Back</a>
+                </div>
             </div>
         </div>
     </div>

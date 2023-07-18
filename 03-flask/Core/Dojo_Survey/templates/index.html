@@ -11,9 +11,9 @@
 
 <body>
     <div class="container">
-        <div class="row m-0 m-auto ">
+        <div class="row m-0 m-auto d-flex justify-content-center align-items-center">
             <div class="col-lg-6">
-                <form action="/process" method="post" class="form_color p-5">
+                <form action="/process" method="post" class="text-light form_color p-5">
                     <h1 class="text-warning">Dojo Survey</h1>
                     <div class="form-group mb-3">
                         <div>
@@ -39,6 +39,15 @@
                         <label for="" class="text-light">Comment (Optional)</label>
                         <textarea name="comments" id="" cols="57" rows="5"></textarea>
                     </div>
+                    <div class="mb-3">
+                        <input type="radio" name="sex" id="" value="Male"> Male
+                        <input type="radio" name="sex" id="" value="Female"> Female
+                    </div>
+                    <div class="mb-3">
+                    <input type="checkbox" name="emailupdate" id=""> Yes I would like to receive an update email
+                    </div>
+
+
                     <input type="submit" class="btn btn-info w-100" value="Submit">
 
 
