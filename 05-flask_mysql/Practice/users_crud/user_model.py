@@ -14,12 +14,10 @@ class User:
         SELECT id,first_name, last_name,email,DATE_FORMAT(created_at, '%M %e, %Y') as created_at,updated_at FROM users;
         """
         result = connectToMySQL("users_schema").query_db(query)
-        # print (result)
         all_users= []
         for row in result:
             user = cls(row)
             all_users.append(user)
-        # print (all_artists)
         return all_users
     
     @classmethod

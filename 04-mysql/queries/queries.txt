@@ -1,0 +1,9 @@
+INSERT INTO dojos (name) VALUES ('DojoAriana'),('DojoDallas'),('DojoChicago');
+delete from dojos where id between 1 and 3;
+INSERT INTO dojos (name) VALUES ('DojoTunisia'),('DojoAmerica'),('DojoCanada');
+INSERT INTO ninjas (first_name,last_name,age,dojo_id) VALUES ('Amine','Bm',34,4), ('Yassine','Bt',45,4),('Med','Ch',41,4);
+INSERT INTO ninjas (first_name,last_name,age,dojo_id) VALUES ('Mouez','Lm',30,5), ('Iadh','Jean',22,5),('Alex','Wick',25,5);
+INSERT INTO ninjas (first_name,last_name,age,dojo_id) VALUES ('Mick','Jalel',34,6), ('Walid','Micheal',29,6),('Martin','olon',24,6);
+SELECT * FROM ninjas where dojo_id=4 
+SELECT * FROM ninjas where dojo_id=9 
+SELECT * FROM ninjas order by id desc limit 1;
