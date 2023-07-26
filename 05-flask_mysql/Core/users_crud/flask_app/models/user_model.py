@@ -1,5 +1,6 @@
 from flask_app.config.mysqlconnection import connectToMySQL
 from flask_app import DATABASE_NAME 
+from datetime import datetime
 class User:
     def __init__(self, data_dict):
         self.id = data_dict['id']
@@ -23,11 +24,13 @@ class User:
     
     @classmethod
     def get_by_id(cls,data_dict):
-        # query = """SELECT id,first_name, last_name,email, created_at, DATE_FORMAT(updated_at, '%M %e, %Y %h:%i%p') as updated_at 
-        #         FROM users WHERE id=%(id)s"""
+        # query = """SELECT id,first_name, last_name,email, created_at, DATE_FORMAT(updated_at, '%M %e, %Y %h:%i %p') as updated_at 
+        #         FROM users WHERE id=%(id)s;"""
         query = """SELECT * FROM users WHERE id=%(id)s;"""
         result = connectToMySQL(DATABASE_NAME).query_db(query,data_dict)
+        date = result[0]['updated_at']
         the_user = cls(result[0])
+        the_user.updated_at = datetime.strftime(date, '%d %B %Y %I:%M %p')
         return the_user
     
     @classmethod
