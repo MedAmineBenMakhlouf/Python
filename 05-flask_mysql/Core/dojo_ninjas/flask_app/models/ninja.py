@@ -22,22 +22,12 @@ class Ninja:
             all_dojos.append(dojo)
         return all_dojos
     
-    @classmethod
-    def get_by_id(cls,data_dict):
-        query = """SELECT * FROM ninjas
-                        join dojos on ninjas.dojo_id=dojos.id WHERE dojo_id=%(id)s;"""
-        result = connectToMySQL(DATABASE_NAME).query_db(query,data_dict)
-        all_ninjas= []
-        for row in result:
-            ninja = cls(row)
-            all_ninjas.append(ninja)
-        return all_ninjas
     
-    @classmethod
-    def delete(cls,data_dict):
-        query="DELETE FROM users WHERE id=%(id)s;"
-        result = connectToMySQL(DATABASE_NAME).query_db(query,data_dict)
-        return None
+    # @classmethod
+    # def delete(cls,data_dict):
+    #     query="DELETE FROM users WHERE id=%(id)s;"
+    #     result = connectToMySQL(DATABASE_NAME).query_db(query,data_dict)
+    #     return None
     
     # @classmethod
     # def edit(cls, data_dict):

@@ -27,11 +27,13 @@
                 <div class="card p-1">
                     <div>
                         <h4>Dojos</h4>
-                        {%for dojo in dojos%}
-                        <li>
-                            <a href="/dojos/{{dojo.id}}">{{dojo.name}}</a>
-                        </li>
-                        {% endfor%}
+                        <ul>
+                            {%for dojo in dojos%}
+                            <li>
+                                <a href="/dojos/{{dojo.id}}">{{dojo.name}}</a>
+                            </li>
+                            {% endfor%}
+                        </ul>
                     </div>
                 </div>
                 <a href="/ninjas/create" class="mt-2">Add Ninja</a>

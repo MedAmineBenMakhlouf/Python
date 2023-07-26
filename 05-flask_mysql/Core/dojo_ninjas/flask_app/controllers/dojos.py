@@ -1,4 +1,4 @@
-from flask import  render_template, redirect, request 
+from flask import  render_template, redirect, request
 from flask_app import app
 from flask_app.models.dojo import Dojo
 from flask_app.models.ninja import Ninja
@@ -21,8 +21,8 @@ def create_dojo():
 
 @app.route('/dojos/<int:dojo_id>')
 def show_dojo_ninjas(dojo_id):
-    dojo_ninjas = Ninja.get_by_id({'id':dojo_id})
-    return render_template('view_details.html', ninjas=dojo_ninjas)
+    dojo_ninjas = Dojo.get_by_id({'id':dojo_id})
+    return render_template('view_details.html', dojo=dojo_ninjas)
 
 # @app.route('/users/view/<int:user_id>')
 # def view_user(user_id):
