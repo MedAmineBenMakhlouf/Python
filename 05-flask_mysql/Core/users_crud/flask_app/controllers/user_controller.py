@@ -23,8 +23,9 @@ def create_user():
         'last_name': request.form['last_name'],
         'email': request.form['email']
     }
-    User.create_user(data_dict)
-    return redirect('/users')
+    user_id = User.create_user(data_dict)
+    get_user = User.get_by_id(data_dict={'id':user_id})
+    return render_template('view.html',user=get_user)
 
 @app.route('/users/view/<int:user_id>')
 def view_user(user_id):

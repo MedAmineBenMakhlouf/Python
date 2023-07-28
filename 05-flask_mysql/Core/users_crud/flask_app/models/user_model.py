@@ -64,4 +64,4 @@ class User:
                 VALUES (%(first_name)s,%(last_name)s,%(email)s);
                 """
         result = connectToMySQL(DATABASE_NAME).query_db(query,data_dict)
-        return None
+        return result
