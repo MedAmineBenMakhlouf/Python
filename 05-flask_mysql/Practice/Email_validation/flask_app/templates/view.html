@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <title>Emails</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row d-flex justify-content-center m-0 m-auto mt-3">
+            <div class="col-6 border border-1 border-dark bg-success text-center fw-bold">
+                <p>The address email you entered ({{last_one.email}})</p>
+                <p>is a VALID email address! Thank you</p>
+            </div>
+        </div>
+        <div class="row m-0 m-auto mt-3">
+            <div class="col-6 text-decoration-underline">Email addresses entered:</div>
+        </div>
+        <div class="row m-0 m-auto">
+            <div class="col-6">
+                <table class="border-0">
+                    <tbody>
+                        {%for email in all_mails%}
+                        <tr>
+                            <td class="p-2"> {{email.email}} </td>
+                            <td> {{email.created_at}}</td>
+                            <td> <a href="/email/{{email.id}}/delete">delete</a></td>
+                        </tr>
+                        {%endfor%}
+                    </tbody>
+                </table>
+                <a href="/">Go Back</a>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+
+</html>
