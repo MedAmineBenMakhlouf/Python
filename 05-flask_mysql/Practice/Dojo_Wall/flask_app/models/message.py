@@ -49,6 +49,14 @@ class Message:
         return connectToMySQL(DATABASE_NAME).query_db(query,data_dict)
     
     @classmethod
+    def count_messages_sent(cls,data_dict):
+        query="select count(*) as nbr_msg from tranfert_messages where sender_id=%(id)s"
+        result=connectToMySQL(DATABASE_NAME).query_db(query,data_dict)
+        if result:
+            return result
+        return 0
+    
+    @classmethod
     def count_messages(cls,data_dict):
         query="select count(*) as nbr_msg from tranfert_messages where receiver_id=%(id)s"
         result=connectToMySQL(DATABASE_NAME).query_db(query,data_dict)

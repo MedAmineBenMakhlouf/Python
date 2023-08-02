@@ -15,10 +15,11 @@ def dashboard():
     if 'user_id' not in session:
         return redirect('/')
     messages = Message.get_all_user_messages({'id':session['user_id']})
-    nbr = Message.count_messages({'id':session['user_id']})
+    nbr_received = Message.count_messages({'id':session['user_id']})
+    nbr_sent = Message.count_messages_sent({'id':session['user_id']})
     all_users = User.get_all_users({'id':session['user_id']})
     logged_user = User.get_by_id({'id':session['user_id']})
-    return render_template("dashboard.html",user = logged_user, msgs=messages, nb=nbr[0]['nbr_msg'],users=all_users)
+    return render_template("dashboard.html",user = logged_user, msgs=messages,nb_sent=nbr_sent[0]['nbr_msg'], nb=nbr_received[0]['nbr_msg'],users=all_users)
 
 
 

@@ -48,7 +48,7 @@
                                 {{msg.message}}
                                 <hr>
                             </div>
-                            <a href="/destroy/message/{{msg.id}}" class="btn">delete</a>
+                            <a href="/messages/{{msg.id}}/destroy" class="btn">delete</a>
                         </div>
                         {%endfor%}
 
@@ -60,6 +60,16 @@
                     <div class="card-header">
                         <h3 class="text-center text-light">Send a message</h3>
                     </div>
+
+                        <div class="card-header text-light">
+                            {% if nb_sent==0 %}
+                            <h6>No message sent</h6>
+                            {%elif nb_sent==1%}
+                            <h6>you send {{nb_sent}} message</h6>
+                            {%else%}
+                            <h6>you send {{nb_sent}} messages</h6>
+                            {%endif%}
+                        </div>
                     <hr>
                     <div class="card-body">
                         {%for user in users%}
